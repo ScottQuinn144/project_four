@@ -6,7 +6,7 @@ from .models import Customer, Booking
 class CustomerAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'phone_number', 'email')
     search_fields = ['phone_number', 'email']
-    list_filter = ('first_name', 'phone_number')
+    list_filter = ('email', 'phone_number')
 
 
 @admin.register(Booking)
