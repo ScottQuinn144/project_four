@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@1,500&display=swap" rel="stylesheet">
     <title>NordicSmokeHouse</title> 
   </head>
   <body>
@@ -60,25 +63,26 @@
       <main class="flex-shrink-0 main-bg">
         {% block content %}
         {% endblock content %}
-    </main>
-    
-    <div class='col-fluid text-center bg-light'>
-      <h5 class="uppercase general-sub text-muted">Socials</h5>
-      <ul class='list-inline social-links align-text-top'>
-          <li class="list-inline-item">
-              <a target="_blank" href="#">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                  <span class="sr-only">Facebook</span>
-              </a>
-          </li>
-          <li class="list-inline-item">
-              <a target="_blank" href="#">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                  <span class="sr-only">Instagram</span>
-              </a>
-          </li>
-      </ul>
-  </div>
+      </main>
+      <footer class="mt-8">
+        <div class='col-fluid text-center bg-light'>
+          <h5 class="uppercase general-sub text-muted mb-2 pt-4">Socials</h5>
+          <ul class='list-inline social-links align-text-top'>
+              <li class="list-inline-item">
+                  <a target="_blank" href="https://www.facebook.com/">
+                      <i class="fa fa-facebook px-5" aria-hidden="true"></i>
+                      <span class="sr-only">Facebook</span>
+                  </a>
+              </li>
+              <li class="list-inline-item">
+                  <a target="_blank" href="https://www.instagram.com/">
+                      <i class="fa fa-instagram px-5" aria-hidden="true"></i>
+                      <span class="sr-only">Instagram</span>
+                  </a>
+              </li>
+          </ul>
+        </div>
+      </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>
