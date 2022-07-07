@@ -1,5 +1,56 @@
 {% extends "base.html" %}
 {%block content%}
-<h1>Gallery</h1>
+<div class="border-bottom">
+    <div class="conatiner-fluid pb-2 bg-dark">
+        <h1 class="text-center text-light mt-2 pt-2">Gallery</h1>
+    </div>
+    <div class="container center-align pt-2">
+        <div class="row bg-light">
+        <div class="col-6">
+            <h2 class="pt-4 text-decoration-underline text-center">Our Food</h2>
+            <ul class="list-group list-group-flush bg-light mb-4 text-center">
+                <li class="list-group-item">Fillet</li>
+                <li class="list-group-item">Ribs</li>
+                <li class="list-group-item">Homemade Burger</li>
+                <li class="list-group-item">Texas Chilli</li>
+                <li class="list-group-item">Ribeye Steak</li>
+            </ul>
+        </div>
+        <div class="col-6 bg-light">
+            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner img-thumbnail">
+                <div class="carousel-item active img-thumbnail" data-bs-interval="6000">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Beef_fillet_steak_with_mushrooms.jpg/300px-Beef_fillet_steak_with_mushrooms.jpg" class="d-block w-100"  style="height: 250px;" alt="steak">
+                </div>
+                <div class="carousel-item img-thumbnail" data-bs-interval="6000">
+                    <img src="https://lovefood.net.au/wp-content/uploads/2014/10/R1-13-Smoky-BBQ-and-Bourbon-Ribs-0716-300px.jpg" class="d-block w-100" style="height: 250px;" alt="ribs">
+                </div>
+                <div class="carousel-item img-thumbnail" data-bs-interval="6000">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/RedDot_Burger.jpg/300px-RedDot_Burger.jpg" class="d-block w-100" style="height: 250px;" alt="burgers">
+                </div>
+                <div class="carousel-item img-thumbnail" data-bs-interval="6000">
+                    <img src="https://www.curiouscuisiniere.com/wp-content/uploads/2017/06/American-Cowboy-Chili-Texas-Red-Chili-2610.21.2.jpg" class="d-block w-100" style="height: 250px;" alt="texas chilli">
+                </div>
+                <div class="carousel-item img-thumbnail" data-bs-interval="6000">
+                    <img src="https://media.istockphoto.com/photos/boneless-chicken-wings-covered-in-honey-garlic-bbq-sauce-with-ranch-picture-id1250528991?k=20&m=1250528991&s=612x612&w=0&h=cYu6FZm1mltAtc9FuPMQWl5aYD1wBPLixDhylyHRvgQ=" class="d-block w-100" style="height: 250px;" alt="wings">
+                </div>
+                <div class="carousel-item img-thumbnail" data-bs-interval="6000">
+                    <img src="https://www.enjoywine.se/app/uploads/2018/05/Grillad_entrecote_med_kramig_dressing_med_rostad_vitlo%CC%88k_st-1024x683.jpg" class="d-block w-100" style="height: 250px;" alt="steak">
+                </div>
 
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+</div>
 {%endblock%}
