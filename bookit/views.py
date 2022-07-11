@@ -1,6 +1,6 @@
 from django.shortcuts import render
-from django import forms
-from .models import Customer, Booking
+from .models import Customer
+from django.views import generic
 
 
 def index(request):
@@ -11,10 +11,6 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def book(request):
-    return render(request, 'book.html')
-
-
 def gallery(request):
     return render(request, 'gallery.html')
 
@@ -23,9 +19,8 @@ def menu(request):
     return render(request, 'menu.html')
 
 
-class CustomerForm(forms.Form):
+class CustomerForm(generic.ListView):
     model = Customer
+    template_name = "book.html"
+    paginate_by = 2
 
-
-class BookingForm(forms.Form):
-    model = Booking
