@@ -2,87 +2,168 @@
 
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@1,500&display=swap" rel="stylesheet">
-    <title>NordicSmokeHouse</title> 
-  </head>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    type="text/css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"
+    type="text/css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Finlandica:ital,wght@1,500&display=swap" rel="stylesheet">
+  <title>NordicSmokeHouse</title>
+</head>
+
+<body>
+
   <body>
-    <body>
-      <header>
-        <nav class="navbar navbar-expand-lg bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand bg-light center-align" href="{% url 'home' %}">Nordic Smoke House</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown">
-                  <a class='nav-link dropdown-toggle ' href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Search
-                  </a>
-                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item" href="{% url 'home' %}">Home</a></li>
-                    <li><a class="dropdown-item" href="{% url 'menu' %}">Menu</a></li>
-                    <li><a class="dropdown-item" href="{% url 'book' %}">Book A Table</a></li>
-                    <li><a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a></li>
-                    <li><a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a></li>
-                  </ul>
-                </li>
-              </ul>
-              <div class="dropdown">
-                <button class="btn btn-light dropdown-toggle text-muted" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Opening Hours
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li class="text-left text-secondary">Mon: 5pm- 10pm</li>
-                  <br>
-                  <li class="text-left text-secondary">Tues: 5pm- 10pm</li>
-                  <br>
-                  <li class="text-left text-secondary">Wed: 5pm- 10pm</li>
-                  <br>
-                  <li class="text-left text-secondary">Thurs: 5pm- 10pm</li>
-                  <br>
-                  <li class="text-left text-secondary">Fri: 4pm- 11pm</li>
-                  <br>
-                  <li class="text-left text-secondary">Sat: 1pm- 11pm</li>
-                  <br>
-                  <li class="text-left text-secondary ">Sun: 1pm- 10pm</li>
+    <header>
+      <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand bg-light center-align" href="{% url 'home' %}">Nordic Smoke House</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class='nav-link dropdown-toggle ' href="" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Search
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="{% url 'home' %}">Home</a></li>
+                  <li><a class="dropdown-item" href="{% url 'menu' %}">Menu</a></li>
+                  <li><a class="dropdown-item" href="{% url 'book' %}">Book A Table</a></li>
+                  <li><a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a></li>
+                  <li><a class="dropdown-item" href="{% url 'contact' %}">Contact Us</a></li>
                 </ul>
+              </li>
+            </ul>
+
+            <div class="m-2">
+              <div class="modal fade" id="customer" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+                tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Show a second modal and hide this one with the button below.
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Open
+                        second
+                        modal</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
+                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      Hide this modal and show the first with the button below.
+                    </div>
+                    <div class="modal-footer">
+                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back
+                        to
+                        first</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="btn btn-secondary" data-bs-toggle="modal" href="#customer" role="button">Book a Table</a>
+            </div>
+
+
+
+            <div class="m-2">
+              <!-- Button trigger modal -->
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#open">
+                Open Hours
+              </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="open" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Open Hours</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                      <ul class="list-group">
+                        <li class="text-center list-group-item text-secondary">Mon: 5pm- 10pm</li>
+
+                        <li class="text-center list-group-item text-secondary">Tues: 5pm- 10pm</li>
+
+                        <li class="text-center list-group-item text-secondary">Wed: 5pm- 10pm</li>
+
+                        <li class="text-center list-group-item text-secondary">Thurs: 5pm- 10pm</li>
+
+                        <li class="text-center list-group-item text-secondary">Fri: 4pm- 11pm</li>
+
+                        <li class="text-center list-group-item text-secondary">Sat: 1pm- 11pm</li>
+
+                        <li class="text-center list-group-item text-secondary ">Sun: 1pm- 10pm</li>
+                      </ul>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+
+                </div>
               </div>
             </div>
           </div>
-        </nav>
-      </header>
-      <main class="flex-shrink-0 main-bg">
-        {% block content %}
-        {% endblock content %}
-      </main>
-      <footer class="bg-light">
-        <div class='col-fluid text-center bg-light'>
-          <h5 class="uppercase general-sub text-muted mb-2 pt-2">Socials</h5>
-          <ul class='list-inline social-links align-text-top mb-0'>
-              <li class="list-inline-item mb-4">
-                  <a target="_blank" href="https://www.facebook.com/">
-                      <i class="fa fa-facebook px-5" aria-hidden="true"></i>
-                      <span class="sr-only">Facebook</span>
-                  </a>
-              </li>
-              <li class="list-inline-item mb-4">
-                  <a target="_blank" href="https://www.instagram.com/">
-                      <i class="fa fa-instagram px-5" aria-hidden="true"></i>
-                      <span class="sr-only">Instagram</span>
-                  </a>
-              </li>
-          </ul>
-        </div>
-      </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+      </nav>
+    </header>
+
+
+    <main class="flex-shrink-0 main-bg">
+      {% block content %}
+      {% endblock content %}
+    </main>
+
+
+    <footer class="bg-light">
+      <div class='col-fluid text-center bg-light'>
+        <h5 class="uppercase general-sub text-muted mb-2 pt-2">Socials</h5>
+        <ul class='list-inline social-links align-text-top mb-0'>
+          <li class="list-inline-item mb-4">
+            <a target="_blank" href="https://www.facebook.com/">
+              <i class="fa fa-facebook px-5" aria-hidden="true"></i>
+              <span class="sr-only">Facebook</span>
+            </a>
+          </li>
+          <li class="list-inline-item mb-4">
+            <a target="_blank" href="https://www.instagram.com/">
+              <i class="fa fa-instagram px-5" aria-hidden="true"></i>
+              <span class="sr-only">Instagram</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
   </body>
+
 </html>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views import View
+from django import forms
+from .models import Customer, Booking
 
 
 def index(request):
@@ -20,3 +21,11 @@ def gallery(request):
 
 def menu(request):
     return render(request, 'menu.html')
+
+
+class CustomerForm(forms.Form):
+    model = Customer
+
+
+class BookingForm(forms.Form):
+    model = Booking
