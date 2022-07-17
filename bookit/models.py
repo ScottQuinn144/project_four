@@ -33,7 +33,7 @@ class Booking(models.Model):
     customer = models.ManyToManyField(Customer)
     date_of_booking = models.DateField()
     booked_time = models.CharField(max_length=15)
-    num_of_guests = models.IntegerField()
+    num_of_guests = models.IntegerField(max(0, 6))
     available_seats = 30
     status_of_booking = models.BooleanField(choices=STATUS, default=False)
     which_tables = models.CharField(max_length=10)

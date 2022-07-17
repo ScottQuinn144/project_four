@@ -5,7 +5,12 @@ from .forms import CustomerForm
 def MakeABooking(response):
     if response.method == "POST":
         form = CustomerForm(response.POST)
+        guests = 6
         if form.is_valid():
+            if guests > 6:
+                form = CustomerForm()
+            return render(response, 'book.html', {'form': form})
+        else:
             form.save()
         return redirect('home')
     else:
