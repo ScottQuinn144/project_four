@@ -2,7 +2,7 @@ from django import forms
 from .models import Customer
 
 
-class CustomerForm(forms.Form):
-    model = Customer
-    title = forms.CharField()
-    description = forms.CharField(widget=forms.Textarea)
+class CustomerForm(forms.ModelForm):
+    class Meta:
+        model = Customer
+        fields = '__all__'

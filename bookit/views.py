@@ -1,13 +1,16 @@
-from django.shortcuts import render
-from .models import Customer
-from django.views.generic.edit import FormView
+from django.shortcuts import render, redirect
 from .forms import CustomerForm
 
 
-class CustomerFormView(FormView):
-    form_class = CustomerForm
-    model = Customer
-    template_name = 'book.html'
+def MakeABooking(response):
+    if response.method == "POST":
+        form = CustomerForm(response.POST)
+        if form.is_valid():
+            form.save()
+        return redirect('home')
+    else:
+        form = CustomerForm()
+    return render(response, 'book.html', {'form': form})
 
 
 def index(request):
@@ -24,4 +27,3 @@ def gallery(request):
 
 def menu(request):
     return render(request, 'menu.html')
-

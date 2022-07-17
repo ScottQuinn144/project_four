@@ -1,9 +1,8 @@
 from django.db import models
-from django.contrib.auth.models import User
 
 
-STATUS = ((True, "Booked"), (False, "Not Booked"))
-AVAILABLE = ((True, 'Yes'), (False, 'No'))
+STATUS = ((1, "Booked"), (0, "Not Booked"))
+AVAILABLE = ((1, 'Yes'), (0, 'No'))
 
 
 class Customer(models.Model):
@@ -15,6 +14,7 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=15)
     email = models.EmailField(max_length=50)
+   
 
     class Meta:
         '''
@@ -33,8 +33,8 @@ class Booking(models.Model):
     customer = models.ManyToManyField(Customer)
     date_of_booking = models.DateField()
     booked_time = models.CharField(max_length=15)
-    num_of_guests = models.IntegerField(editable=True)
-    available_tables = models.BooleanField(choices=AVAILABLE, default=False)
+    num_of_guests = models.IntegerField()
+    available_seats = 30
     status_of_booking = models.BooleanField(choices=STATUS, default=False)
     which_tables = models.CharField(max_length=10)
 
