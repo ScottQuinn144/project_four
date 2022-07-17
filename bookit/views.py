@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from .models import Customer
-from django.views import generic
+from django.views.generic.edit import FormView
+from .forms import CustomerForm
+
+
+class CustomerFormView(FormView):
+    form_class = CustomerForm
+    model = Customer
+    template_name = 'book.html'
 
 
 def index(request):
@@ -17,10 +24,4 @@ def gallery(request):
 
 def menu(request):
     return render(request, 'menu.html')
-
-
-class CustomerForm(generic.ListView):
-    model = Customer
-    template_name = "book.html"
-    paginate_by = 2
 
