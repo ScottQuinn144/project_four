@@ -1,8 +1,20 @@
 from django.db import models
 
+TIMES = (
+    ('1', '5pm to 7pm'),
+    ('2', '7pm to 9pm'),
+    ('3', '9pm to close'),
+)
 
-STATUS = ((1, "Booked"), (0, "Not Booked"))
-AVAILABLE = ((1, 'Yes'), (0, 'No'))
+
+GUESTS = (
+    ('1', 1),
+    ('2', 2),
+    ('3', 3),
+    ('4', 4),
+    ('5', 5),
+    ('6', 6),
+)
 
 
 class Customer(models.Model):
@@ -14,7 +26,9 @@ class Customer(models.Model):
     last_name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=15)
     email = models.EmailField(max_length=50)
-   
+    date_of_booking = models.DateTimeField()
+    booked_time = models.CharField(max_length=4, choices=TIMES, default='5pm-7pm')
+    num_of_guests = models.CharField(max_length=7, choices=GUESTS, default='1')
 
     class Meta:
         '''
@@ -23,26 +37,4 @@ class Customer(models.Model):
         ordering = ["last_name"]
 
     def __str__(self):
-        return f"{self.last_name}, {self.first_name}"
-
-
-class Booking(models.Model):
-    '''
-    Information for making a booking
-    '''
-    customer = models.ManyToManyField(Customer)
-    date_of_booking = models.DateField()
-    booked_time = models.CharField(max_length=15)
-    num_of_guests = models.IntegerField(max(0, 6))
-    available_seats = 30
-    status_of_booking = models.BooleanField(choices=STATUS, default=False)
-    which_tables = models.CharField(max_length=10)
-
-    class Meta:
-        '''
-        Order of booked tables by time in accending order
-        '''
-        ordering = ["booked_time"]
-
-    def __str__(self):
-        return f"BOOKING: Table: {self.which_tables}| Time: {self.booked_time}| Guests: {self.num_of_guests}"
+        return f"{self.last_name}, {self.first_name} booked for {self.num_of_guests} on {self.date_of_booking}"

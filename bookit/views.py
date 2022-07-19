@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .forms import CustomerForm, BookingForm
+from .forms import CustomerForm
 
 
 def MakeABooking(response):
@@ -7,21 +7,10 @@ def MakeABooking(response):
         form = CustomerForm(response.POST)
         form.is_valid()
         form.save()
-        return redirect('booking')
+        return redirect('home')
     else:
         form = CustomerForm()
     return render(response, 'book.html', {'form': form})
-
-
-def MakeABook(response):
-    if response.method == "POST":
-        form = BookingForm(response.POST)
-        form.is_valid()
-        form.save()
-        return redirect('home')
-    else:
-        form = BookingForm()
-    return render(response, 'booking.html', {'form': form})
 
 
 def index(request):
