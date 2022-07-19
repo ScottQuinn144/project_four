@@ -52,7 +52,7 @@
                 <div class="modal-dialog modal-dialog-centered">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+                      <h5 class="modal-title" id="exampleModalToggleLabel"></h5>
                       <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
@@ -67,71 +67,48 @@
                 </div>
               </div>
 
-              <div class="modal fade" id="exampleModalToggle2" aria-hidden="true"
-                aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalToggleLabel2">Modal 2</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+              <div class="m-2">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#open">
+                  Open Hours
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="open" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Open Hours</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <ul class="list-group">
+                          <li class="text-center list-group-item text-secondary">Mon: 5pm- 10pm</li>
+
+                          <li class="text-center list-group-item text-secondary">Tues: 5pm- 10pm</li>
+
+                          <li class="text-center list-group-item text-secondary">Wed: 5pm- 10pm</li>
+
+                          <li class="text-center list-group-item text-secondary">Thurs: 5pm- 10pm</li>
+
+                          <li class="text-center list-group-item text-secondary">Fri: 4pm- 11pm</li>
+
+                          <li class="text-center list-group-item text-secondary">Sat: 1pm- 11pm</li>
+
+                          <li class="text-center list-group-item text-secondary ">Sun: 1pm- 10pm</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
                     </div>
-                    <div class="modal-body">
-                      Hide this modal and show the first with the button below.
-                    </div>
-                    <div class="modal-footer">
-                      <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back
-                        to
-                        first</button>
-                    </div>
+
                   </div>
                 </div>
               </div>
-              <a class="btn btn-secondary" data-bs-toggle="modal" href="#customer" role="button">Book a Table</a>
             </div>
-
-
-
-            <div class="m-2">
-              <!-- Button trigger modal -->
-              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#open">
-                Open Hours
-              </button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="open" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Open Hours</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                      <ul class="list-group">
-                        <li class="text-center list-group-item text-secondary">Mon: 5pm- 10pm</li>
-
-                        <li class="text-center list-group-item text-secondary">Tues: 5pm- 10pm</li>
-
-                        <li class="text-center list-group-item text-secondary">Wed: 5pm- 10pm</li>
-
-                        <li class="text-center list-group-item text-secondary">Thurs: 5pm- 10pm</li>
-
-                        <li class="text-center list-group-item text-secondary">Fri: 4pm- 11pm</li>
-
-                        <li class="text-center list-group-item text-secondary">Sat: 1pm- 11pm</li>
-
-                        <li class="text-center list-group-item text-secondary ">Sun: 1pm- 10pm</li>
-                      </ul>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
-          </div>
       </nav>
     </header>
 

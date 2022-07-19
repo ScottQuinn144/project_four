@@ -1,21 +1,27 @@
 from django.shortcuts import render, redirect
-from .forms import CustomerForm
+from .forms import CustomerForm, BookingForm
 
 
 def MakeABooking(response):
     if response.method == "POST":
         form = CustomerForm(response.POST)
-        guests = 6
-        if form.is_valid():
-            if guests > 6:
-                form = CustomerForm()
-            return render(response, 'book.html', {'form': form})
-        else:
-            form.save()
-        return redirect('home')
+        form.is_valid()
+        form.save()
+        return redirect('booking')
     else:
         form = CustomerForm()
     return render(response, 'book.html', {'form': form})
+
+
+def MakeABook(response):
+    if response.method == "POST":
+        form = BookingForm(response.POST)
+        form.is_valid()
+        form.save()
+        return redirect('home')
+    else:
+        form = BookingForm()
+    return render(response, 'booking.html', {'form': form})
 
 
 def index(request):
