@@ -9,7 +9,8 @@ class DateInput(forms.DateInput):
 class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
-        fields = '__all__'
+        fields = ('first_name', 'last_name', 'phone_number', 'email',
+                  'num_of_guests', 'date_of_booking', 'booked_time')
         labels = {
             'email': ('Email Address'),
         }

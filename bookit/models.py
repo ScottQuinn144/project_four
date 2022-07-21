@@ -1,34 +1,47 @@
 from django.db import models
 
-TIMES = (
+TIMES = {
     ('1', '5pm to 7pm'),
     ('2', '7pm to 9pm'),
     ('3', '9pm to close'),
-)
+}
 
 
-GUESTS = (
+GUESTS = {
     ('1', 1),
     ('2', 2),
     ('3', 3),
     ('4', 4),
     ('5', 5),
     ('6', 6),
-)
+}
+
+TABLES = {
+    (4, 'Table 1'),
+    (4, 'Table 2'),
+    (2, 'Table 3'),
+    (4, 'Table 4'),
+    (4, 'Table 5'),
+    (2, 'Table 6'),
+    (10, 'Table 7'),
+}
 
 
 class Customer(models.Model):
     '''
-    Model for the customer including all information that will be required to take the booking
+    Model for the customer including all information that will be required to
+    take the booking
     '''
     customer_id = models.IntegerField(unique=True, primary_key=True, editable=False)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     phone_number = models.CharField(max_length=15)
     email = models.EmailField(max_length=50)
-    date_of_booking = models.DateTimeField()
-    booked_time = models.CharField(max_length=4, choices=TIMES, default='5pm-7pm')
+    date_of_booking = models.DateField()
+    booked_time = models.CharField(max_length=4, choices=TIMES,
+                                   default='5pm-7pm')
     num_of_guests = models.CharField(max_length=7, choices=GUESTS, default='1')
+    table = models.CharField(max_length=7, choices=TABLES)
 
     class Meta:
         '''
