@@ -13,6 +13,7 @@ class CustomerForm(forms.ModelForm):
                   'num_of_guests', 'date_of_booking', 'booked_time')
         labels = {
             'email': ('Email Address'),
+            'num_of_guests': ('How Many People')
         }
         widgets = {
             'date_of_booking': DateInput(),
