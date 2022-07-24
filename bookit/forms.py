@@ -21,3 +21,4 @@ class CustomerForm(forms.ModelForm):
             'date_of_booking': DateInput(),
             'other_info': forms.Textarea(attrs={'rows': 6})
         }
+        errors = 'Please Contact The Restaurant To Book'

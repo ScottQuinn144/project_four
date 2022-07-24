@@ -8,9 +8,10 @@ def MakeABooking(response):
         form.is_valid()
         form.save()
         return redirect('home')
+
     else:
         form = CustomerForm()
-    return render(response, 'book.html', {'form': form})
+        return render(response, 'book.html', {'form': form})
 
 
 def index(request):
