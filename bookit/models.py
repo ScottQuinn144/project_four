@@ -44,6 +44,7 @@ class Customer(models.Model):
     booked_time = models.CharField(max_length=4, choices=TIMES)
     num_of_guests = models.CharField(max_length=7, choices=GUESTS)
     table = models.CharField(max_length=7, choices=TABLES)
+    other_info = models.TextField(max_length=200, default='')
 
     class Meta:
         '''

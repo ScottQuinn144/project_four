@@ -10,11 +10,14 @@ class CustomerForm(forms.ModelForm):
     class Meta:
         model = Customer
         fields = ('first_name', 'last_name', 'phone_number', 'email',
-                  'num_of_guests', 'date_of_booking', 'booked_time')
+                  'num_of_guests', 'date_of_booking', 'booked_time',
+                  'other_info')
         labels = {
             'email': ('Email Address'),
-            'num_of_guests': ('How Many People')
+            'num_of_guests': ('How Many People'),
+            'other_info': ('Special Requirements?')
         }
         widgets = {
             'date_of_booking': DateInput(),
+            'other_info': forms.Textarea(attrs={'rows': 6})
         }
