@@ -8,21 +8,11 @@
     </div>
 </div>
 
-<div class="pt-2 bg-light border-bottom">
-    <div class="m-3 text-center bg-light">
-        <label for="fullname" class="form-label badge bg-secondary text-wrap">Full Name</label>
-        <input type="text" class="form-control text-center" id="exampleFormControlInput1" placeholder="John Doe">
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div class="form-actions">
+      <button type="submit">Send</button>
     </div>
-    <div class="m-3 text-center bg-light">
-        <label for="email" class="form-label badge bg-secondary text-wrap">Email Address</label>
-        <input type="email" class="form-control text-center" id="email" rows="3" placeholder="your_email@email.com"></textarea>
-    </div>
-    <div class="m-3 text-center bg-light">
-        <label for="queary" class="form-label badge bg-secondary text-wrap">Your Questions</label>
-        <textarea class="form-control text-center" id="queary" rows="3" placeholder="Enter your question here..."></textarea>
-    </div>
-    <div class="d-grid m-2 col-6 mx-auto pb-4">
-        <button class="btn fs-6 text-center badge bg-secondary text-wrap" type="button">Submit</button>
-    </div>
-</div>
+</form>
 {%endblock%}
