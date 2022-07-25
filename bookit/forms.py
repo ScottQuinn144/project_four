@@ -22,9 +22,3 @@ class CustomerForm(forms.ModelForm):
             'other_info': forms.Textarea(attrs={'rows': 6})
         }
         errors = 'Please Contact The Restaurant To Book'
-
-
-class EmailForm(forms.Form):
-    from_email = forms.EmailField(required=True)
-    subject = forms.CharField(required=True)
-    message = forms.CharField(widget=forms.Textarea, required=True)
