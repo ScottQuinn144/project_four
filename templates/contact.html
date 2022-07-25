@@ -18,20 +18,20 @@
     </div>
     <div class="col">
       <div>
-        <form class="text-center m-2 d-grid align-center">
-          {% csrf_token %}
-          <div class="center-form p-4">
-            <form onsubmit="return sendMail(this);">
-              <input type="text" name="name" class="form-control mb-2" id="fullname" placeholder="Name" required />
-              <input type="text" name="emailaddress" class="form-control mb-2" id="emailaddress" placeholder="Email"
-                required />
-              <textarea rows="5" name="projectsummary" class="form-control mb-4" id="projectsummary"
-                placeholder="Write your query here..." required></textarea>
+        <div class="center-form p-4 text-center center-align">
+          <form onsubmit=" return sendMail(this);">
+            <input type="text" name="name" class="form-control mb-2" id="fullname" placeholder="Name" required />
+            <input type="text" name="emailaddress" class="form-control mb-2" id="emailaddress" placeholder="Email"
+              required />
+            <textarea rows="5" name="query" class="form-control mb-4" id="query" placeholder="Write your query here..."
+              required></textarea>
+            
               <button type="submit" class="btn btn-secondary center-block">Send Query</button>
-            </form>
-          </div>
+            
+          </form>
+        </div>
       </div>
-    
+
     </div>
     <div class="col">
     </div>
