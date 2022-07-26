@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,7 +30,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sqdevs.company@gmail.com'
+EMAIL_HOST_PASSWORD = 'sqdevs1992'
 
 
 # Application definition
@@ -43,6 +49,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'bookit',
 ]
+
+MESSAGE_TAGS = {
+        messages.SUCCESS: 'alert-success',
+    }
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
