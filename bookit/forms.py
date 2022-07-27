@@ -1,7 +1,5 @@
 from django import forms
 from .models import Customer
-from django.conf import settings
-from django.core.mail import send_mail
 
 
 class DateInput(forms.DateInput):
