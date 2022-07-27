@@ -1,9 +1,9 @@
 from django.db import models
 
 TIMES = {
-    ('1', '5pm to 7pm'),
-    ('2', '7pm to 9pm'),
-    ('3', '9pm to close'),
+    ('17-10', '5pm to 7pm'),
+    ('19-21', '7pm to 9pm'),
+    ('21-23', '9pm to close')
 }
 
 
@@ -34,16 +34,14 @@ class Customer(models.Model):
     Model for the customer including all information that will be required to
     take the booking
     '''
-    customer_id = models.IntegerField(unique=True, primary_key=True,
-                                      editable=False)
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
-    phone_number = models.CharField(max_length=15)
+    phone_number = models.CharField(max_length=15, primary_key=True)
     email = models.EmailField(max_length=50)
     date_of_booking = models.DateField()
-    booked_time = models.CharField(max_length=4, choices=TIMES)
-    num_of_guests = models.CharField(max_length=7, choices=GUESTS)
-    table = models.CharField(max_length=7, choices=TABLES)
+    booked_time = models.CharField(max_length=50, choices=TIMES)
+    num_of_guests = models.CharField(max_length=50, choices=GUESTS)
+    table = models.CharField(max_length=50, choices=TABLES)
     other_info = models.TextField(max_length=200, default='')
 
     class Meta:

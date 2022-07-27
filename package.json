@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@cloudinary/url-gen": "^1.8.0",
     "@emailjs/browser": "^3.6.2"
   }
 }
